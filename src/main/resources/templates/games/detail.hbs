@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>Game Detail</title>
+	    <link rel="stylesheet" href="/css/lib/bootstrap.min.css">
+	</head>
+	<body>
+		{{> partials/nav}}
+		<div class="jumbotron">
+		  <h1 class="display-4">{{game.name}}</h1>
+		  <hr class="my-4">
+		  <p>장르 : {{game.genre}}</p>
+		  <p>가격 : {{game.price}}</p>
+		  <p>발매일 : {{game.release_date}}</p>
+		  <p>설명 : {{game.description}}</p>
+		  <a class="btn btn-primary btn-lg" href="#" role="button">구매</a>
+		</div>
+		
+		<script src="/js/lib/jquery.min.js"></script>
+    	<script src="/js/lib/bootstrap.min.js"></script>
+    	
+    	<script src="/js/app/gameList.js"></script>
+	</body>
+</html>
