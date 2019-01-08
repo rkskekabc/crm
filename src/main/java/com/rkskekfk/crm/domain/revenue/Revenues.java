@@ -33,19 +33,15 @@ public class Revenues extends BaseTimeEntity {
 	private Games games;
 	
 	@Column(name = "sell_date")
-	private LocalDate sellDate;
-	
-	@Column(name = "sell_amount")
-	private int sellAmount;
+	private LocalDate sell_date;
 	
 	@Column(name = "sell_price")
-	private int sellPrice;
+	private int sell_price;
 	
 	@Builder
-	public Revenues(Games games, LocalDate sellDate, int sellAmount, int sellPrice) {
+	public Revenues(Games games, LocalDate sell_date, int sell_price) {
 		this.games = games;
-		this.sellDate = sellDate;
-		this.sellAmount = sellAmount;
-		this.sellPrice = sellPrice;
+		this.sell_date = sell_date;
+		this.sell_price = sell_price;
 	}
 }

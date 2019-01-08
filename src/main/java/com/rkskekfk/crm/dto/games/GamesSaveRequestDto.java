@@ -14,19 +14,17 @@ import lombok.Setter;
 public class GamesSaveRequestDto {
 	private String name;
 	private String genre;
-	private int sell_amount;
 	private int price;
-	private Long revenue;
 	private LocalDate release_date;
+	private String description;
 	
 	public Games toEntity() {
 		return Games.builder()
 				.name(name)
 				.genre(genre)
-				.sell_amount(sell_amount)
 				.price(price)
-				.revenue(revenue)
 				.release_date(release_date)
+				.description(description)
 				.build();
 	}
 }

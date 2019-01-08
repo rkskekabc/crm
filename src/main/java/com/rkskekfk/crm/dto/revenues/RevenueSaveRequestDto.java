@@ -14,16 +14,14 @@ import lombok.Setter;
 @NoArgsConstructor
 public class RevenueSaveRequestDto {
 	private Games games;
-	private LocalDate sellDate;
-	private int sellAmount;
-	private int sellPrice;
+	private LocalDate sell_date;
+	private int sell_price;
 
 	public Revenues toEntity() {
 		return Revenues.builder()
 				.games(games)
-				.sellDate(sellDate)
-				.sellAmount(sellAmount)
-				.sellPrice(sellPrice)
+				.sell_date(sell_date)
+				.sell_price(sell_price)
 				.build();
 	}
 }

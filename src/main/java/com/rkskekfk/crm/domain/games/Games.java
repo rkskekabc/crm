@@ -62,10 +62,9 @@ public class Games extends BaseTimeEntity {
 		return Games.builder()
 				.name(dto.getName())
 				.genre(dto.getGenre())
-				.sell_amount(dto.getSell_amount())
 				.price(dto.getPrice())
-				.revenue(dto.getRevenue())
 				.release_date(dto.getRelease_date())
+				.description(dto.getDescription())
 				.build();
 	}
 }
