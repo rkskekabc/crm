@@ -20,9 +20,10 @@ public class BuyService {
 	private RevenuesRepository revenuesRepository;
 	
 	@Transactional
-	public String buyGame(BuyGameRequestDto dto) {
+	public Long buyGame(BuyGameRequestDto dto) {
 		try {
 			Games game = gamesRepository.findById(dto.getGameId()).get();
+			System.out.println("game id : " + game.getId());
 			int price = game.getPrice();
 			revenuesRepository.save(Revenues.builder()
 										.games(game)
@@ -33,9 +34,9 @@ public class BuyService {
 			game.addRevenue(price);
 			gamesRepository.save(game);
 			
-			return "success";
+			return 1L;
 		} catch(Exception e) {
-			return "fail";
+			return 0L;
 		}
 	}
 }

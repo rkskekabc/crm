@@ -6,6 +6,7 @@
 	</head>
 	<body>
 		{{> partials/nav}}
+		<input type="hidden" id="gameId" value="{{game.id}}" />
 		<div class="jumbotron">
 		  <h1 class="display-4">{{game.name}}</h1>
 		  <hr class="my-4">
@@ -13,7 +14,7 @@
 		  <p>가격 : {{game.price}}</p>
 		  <p>발매일 : {{game.release_date}}</p>
 		  <p>설명 : {{game.description}}</p>
-		  <a class="btn btn-primary btn-lg" href="#" role="button">구매</a>
+		  <button type="button" class="btn btn-primary" id="btn-buy">구매</button>
 		</div>
 		
 		<script src="/js/lib/jquery.min.js"></script>

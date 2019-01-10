@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.rkskekfk.crm.dto.buy.BuyGameRequestDto;
 import com.rkskekfk.crm.service.BuyService;
@@ -45,7 +46,8 @@ public class WebController {
 	}
 	
 	@PostMapping("/buyGame")
-	public String buyGame(@RequestBody BuyGameRequestDto dto) {
+	@ResponseBody
+	public Long buyGame(@RequestBody BuyGameRequestDto dto) {
 		return buyService.buyGame(dto);
 	}
 }

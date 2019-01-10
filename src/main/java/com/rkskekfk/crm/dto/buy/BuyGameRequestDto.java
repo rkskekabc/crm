@@ -8,6 +8,5 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class BuyGameRequestDto {
-	public Long gameId;
-	public Long couponId;
+	private Long gameId;
 }
