@@ -58,6 +58,10 @@ public class Games extends BaseTimeEntity {
 		this.revenues = revenues;
 	}
 	
+	public void addRevenue(int price) {
+		this.revenue += price;
+	}
+	
 	public static Games of(GamesSaveRequestDto dto) {
 		return Games.builder()
 				.name(dto.getName())
