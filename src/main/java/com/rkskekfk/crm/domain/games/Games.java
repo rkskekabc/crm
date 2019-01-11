@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -34,11 +33,7 @@ public class Games extends BaseTimeEntity {
 	
 	private String genre;
 	
-	private int sell_amount;
-	
 	private int price;
-	
-	private Long revenue;
 	
 	private LocalDate release_date;
 	
@@ -48,19 +43,13 @@ public class Games extends BaseTimeEntity {
 	private List<Revenues> revenues = new ArrayList<Revenues>();
 	
 	@Builder
-	private Games(String name, String genre, int sell_amount, int price, Long revenue, LocalDate release_date, String description, List<Revenues> revenues) {
+	private Games(String name, String genre, int price, LocalDate release_date, String description, List<Revenues> revenues) {
 		this.name = name;
 		this.genre = genre;
-		this.sell_amount = sell_amount;
 		this.price = price;
-		this.revenue = revenue == null ? 0 : revenue;
 		this.release_date = release_date;
 		this.description = description;
 		this.revenues = revenues;
-	}
-	
-	public void addRevenue(int price) {
-		this.revenue += price;
 	}
 	
 	public static Games of(GamesSaveRequestDto dto) {

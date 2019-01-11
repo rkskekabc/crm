@@ -6,7 +6,8 @@
 	</head>
 	<body>
 		{{> partials/nav}}
-		<input type="hidden" id="gameId" value="{{game.id}}" />
+		<input type="hidden" id="game_id" value="{{game.id}}" />
+		<input type="hidden" id="sell_price" value="{{game.price}}" />
 		<div class="jumbotron">
 		  <h1 class="display-4">{{game.name}}</h1>
 		  <hr class="my-4">

@@ -4,12 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.rkskekfk.crm.dto.buy.BuyGameRequestDto;
-import com.rkskekfk.crm.service.BuyService;
 import com.rkskekfk.crm.service.GamesService;
 import com.rkskekfk.crm.service.RevenuesService;
 
@@ -20,7 +15,6 @@ import lombok.AllArgsConstructor;
 public class WebController {
 	private GamesService gamesService;
 	private RevenuesService revenuesService;
-	private BuyService buyService;
 	
 	@GetMapping("/")
 	public String main() {
@@ -43,11 +37,5 @@ public class WebController {
 	public String revenueList(Model model) {
 		model.addAttribute("revenues", revenuesService.findAllDesc());
 		return "revenues/list";
-	}
-	
-	@PostMapping("/buyGame")
-	@ResponseBody
-	public Long buyGame(@RequestBody BuyGameRequestDto dto) {
-		return buyService.buyGame(dto);
 	}
 }

@@ -13,6 +13,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class RevenueSaveRequestDto {
+	private Long game_id;
 	private Games games;
 	private LocalDate sell_date;
 	private int sell_price;

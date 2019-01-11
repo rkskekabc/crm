@@ -4,32 +4,31 @@ var gameDetail = {
 		$('#navListItem').addClass('active');
 		
 		$('#btn-buy').on('click', function () {
-            _this.buy();
+            _this.save();
         });
 	},
 
-	buy : function () {
-		console.log("gameid : " + $('#gameId').val());
-	    var data = {
-	        gameId: $('#gameId').val()
-	    };
-	    
-	    var buyConfirm = confirm("구매하시겠습니까?");
-	    
-	    if(buyConfirm){
-		    $.ajax({
-		        type: 'POST',
-		        url: '/buyGame',
-		        dataType: 'json',
-		        contentType:'application/json; charset=utf-8',
-		        data: JSON.stringify(data)
-		    }).done(function() {
-		        alert('구매하였습니다.');
-		        location.reload();
-		    }).fail(function (error) {
-		    	console.log(error);
-		    });
-	    }
+	save : function(){
+		var data = {
+            game_id: $("#game_id").val(),
+            sell_date: new Date(),
+            sell_price: $("#sell_price").val()
+        };
+
+		var buyConfirm = confirm("구매하시겠습니까?");
+		if(buyConfirm)
+        $.ajax({
+            type: 'POST',
+            url: '/revenues',
+            dataType: 'json',
+            contentType:'application/json; charset=utf-8',
+            data: JSON.stringify(data)
+        }).done(function() {
+            alert('구매하였습니다.');
+            location.reload();
+        }).fail(function (error) {
+            alert(error);
+        });
 	}
 }
 
