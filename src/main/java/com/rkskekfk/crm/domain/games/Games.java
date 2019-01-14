@@ -43,13 +43,12 @@ public class Games extends BaseTimeEntity {
 	private List<Revenues> revenues = new ArrayList<Revenues>();
 	
 	@Builder
-	private Games(String name, String genre, int price, LocalDate release_date, String description, List<Revenues> revenues) {
+	private Games(String name, String genre, int price, LocalDate release_date, String description) {
 		this.name = name;
 		this.genre = genre;
 		this.price = price;
 		this.release_date = release_date;
 		this.description = description;
-		this.revenues = revenues;
 	}
 	
 	public static Games of(GamesSaveRequestDto dto) {
