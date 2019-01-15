@@ -2,7 +2,6 @@ package com.rkskekfk.crm.dto.revenues;
 
 import java.time.LocalDate;
 
-import com.rkskekfk.crm.domain.games.Games;
 import com.rkskekfk.crm.domain.revenue.Revenues;
 
 import lombok.Getter;

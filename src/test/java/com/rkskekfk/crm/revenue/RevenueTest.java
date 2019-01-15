@@ -33,6 +33,6 @@ public class RevenueTest {
 	@Rollback(false)
 	@Transactional
 	public void saveTest() {
-		revenueRepo.save(new Revenues(1L, LocalDate.now(), 30000));
+		revenueRepo.save(new Revenues(2L, LocalDate.now(), 30000));
 	}
 }
