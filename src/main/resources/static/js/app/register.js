@@ -16,9 +16,13 @@ var register = {
         	birthday: $('#birthday').val(),
         	email: $('#email').val(),
         	phone: $('#phone').val(),
-        	role_name: 'ROLE_BASIC'
+        	role_name: 'BASIC'
         };
+        
         $.ajax({
+        	beforeSend: function(request) {
+	            request.setRequestHeader($('#_csrf').attr('name'), $('#_csrf').attr('value'));
+	        },
             type: 'POST',
             url: '/register',
             dataType: 'json',
@@ -28,7 +32,7 @@ var register = {
             alert('가입이 완료되었습니다.');
             location.href = '/';
         }).fail(function (error) {
-            alert(error);
+            console.log(error);
         });
     }
 };

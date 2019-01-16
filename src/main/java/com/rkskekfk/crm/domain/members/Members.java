@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -31,7 +32,8 @@ public class Members extends BaseTimeEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String user_id;
+	@Column(name="user_id")
+	private String userId;
 	
 	private String password;
 	
@@ -49,7 +51,7 @@ public class Members extends BaseTimeEntity {
 	
 	@Builder
 	public Members(String user_id, String password, String name, LocalDate birthday, String email, String phone, List<MemberRoles> member_roles) {
-		this.user_id = user_id;
+		this.userId = user_id;
 		this.password = password;
 		this.name = name;
 		this.birthday = birthday;
