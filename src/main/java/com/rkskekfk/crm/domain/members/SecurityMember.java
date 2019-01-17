@@ -1,5 +1,6 @@
 package com.rkskekfk.crm.domain.members;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,8 +19,17 @@ public class SecurityMember extends User {
 	private static final String ROLE_PREFIX = "ROLE_";
 	private static final long serialVersionUID = 1L;
 	
+	private String name;
+	private LocalDate birthday;
+	private String email;
+	private String phone;
+	
 	public SecurityMember(Members members) {
 		super(members.getUserId(), members.getPassword(), makeGrantedAuthority(members.getMember_roles()));
+		this.name = members.getName();
+		this.birthday = members.getBirthday();
+		this.email = members.getEmail();
+		this.phone = members.getPhone();
 	}
 	
 	private static List<GrantedAuthority> makeGrantedAuthority(List<MemberRoles> roles){

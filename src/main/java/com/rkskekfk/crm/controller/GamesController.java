@@ -1,10 +1,12 @@
 package com.rkskekfk.crm.controller;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.rkskekfk.crm.domain.members.SecurityMember;
 import com.rkskekfk.crm.service.GamesService;
 
 import lombok.AllArgsConstructor;
@@ -15,8 +17,9 @@ public class GamesController {
 	private GamesService gamesService;
 	
 	@GetMapping("/gameList")
-	public String gameList(Model model) {
+	public String gameList(Model model, Authentication auth) {
 		model.addAttribute("games", gamesService.findAllDesc());
+		model.addAttribute("userInfo", (SecurityMember)auth.getPrincipal());
 		return "games/list";
 	}
 	
