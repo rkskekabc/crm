@@ -22,7 +22,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 		// TODO Auto-generated method stub
 		return Optional.ofNullable(membersRepository.findByUserId(user_id))
 				.filter(member -> member != null)
-				.map(member -> new SecurityMember(member))
+				.map(SecurityMember::new)
 				.get();
 	}
 	

@@ -1,14 +1,16 @@
-<!DOCTYPE HTML>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Game Shop</title>
 	    <link rel="stylesheet" href="/css/lib/bootstrap.min.css">
 	</head>
 	<body>
-		{{> partials/nav}}
+		<jsp:include page="./partials/nav.jsp" flush="true"></jsp:include>
 		<h1>회원가입</h1>
 		<form>
-			<input type="hidden" id="_csrf" name="{{_csrf.headerName}}" value="{{_csrf.token}}" />
+			<input type="hidden" id="_csrf" name="${_csrf.headerName}" value="${_csrf.token}" />
 			<div class="container">
 				<div class="input-group mb-3">
 				  <div class="input-group-prepend">

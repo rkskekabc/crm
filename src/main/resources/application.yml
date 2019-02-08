@@ -9,5 +9,10 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     generate-ddl: false
     show-sql: true
-handlebars:
-  exposeRequestAttributes: true
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+server:
+  servlet:    jsp:
+      init-parameters:        developments: true

@@ -1,12 +1,15 @@
-<!DOCTYPE HTML>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Game List</title>
 	    <link rel="stylesheet" href="/css/lib/bootstrap.min.css">
 	</head>
 	<body>
-		{{> partials/nav}}
-		{{userInfo.email}}
+		<jsp:include page="../partials/nav.jsp" flush="true"></jsp:include>
+		${userInfo.email}
 		<h1>목록</h1>
 		<table class="table table-hover">
 			<thead>
@@ -18,14 +21,14 @@
 				</tr>
 			</thead>
 			<tbody>
-				{{#each games}}
+				<c:forEach items="${games}" var="game">
 					<tr>
-						<th scope="row"><a href="/gameList/{{id}}">{{name}}</a></th>
-						<td>{{genre}}</td>
-						<td>{{price}}</td>
-						<td>{{release_date}}</td>
+						<th scope="row"><a href="/gameList/${game.id}">${game.name}</a></th>
+						<td>${game.genre}</td>
+						<td>${game.price}</td>
+						<td>${game.release_date}</td>
 					</tr>
-				{{/each}}
+				</c:forEach>
 			</tbody>
 		</table>
 		<div class="col-md-12">
