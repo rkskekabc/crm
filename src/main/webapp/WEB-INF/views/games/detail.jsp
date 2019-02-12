@@ -19,7 +19,6 @@
 		  <p>설명 : ${game.description}</p>
 		  <button type="button" class="btn btn-primary" id="btn-buy">구매</button>
 		</div>
-		
 		<script src="/js/lib/jquery.min.js"></script>
     	<script src="/js/lib/bootstrap.min.js"></script>
     	

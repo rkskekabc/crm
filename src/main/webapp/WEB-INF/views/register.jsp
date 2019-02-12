@@ -9,7 +9,6 @@
 	<body>
 		<jsp:include page="./partials/nav.jsp" flush="true"></jsp:include>
 		<h1>회원가입</h1>
-		<form>
 			<input type="hidden" id="_csrf" name="${_csrf.headerName}" value="${_csrf.token}" />
 			<div class="container">
 				<div class="input-group mb-3">
@@ -49,7 +48,6 @@
 				  <input type="text" id="phone" name="phone" class="form-control" placeholder="전화번호를 입력하세요" aria-label="Phone" aria-describedby="basic-addon1">
 				</div>
 			</div>
-		</form>
 		<div style="text-align: center">
 	        <button class="btn btn-secondary" data-dismiss="modal" id="btn-cancel">취소</button>
 	        <button class="btn btn-primary" id="btn-save">완료</button>

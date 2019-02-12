@@ -9,7 +9,6 @@
 	</head>
 	<body>
 		<jsp:include page="../partials/nav.jsp" flush="true"></jsp:include>
-		${userInfo.email}
 		<h1>목록</h1>
 		<table class="table table-hover">
 			<thead>

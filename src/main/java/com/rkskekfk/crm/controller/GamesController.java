@@ -17,9 +17,8 @@ public class GamesController {
 	private GamesService gamesService;
 	
 	@GetMapping("/gameList")
-	public String gameList(Model model, Authentication auth) {
+	public String gameList(Model model) {
 		model.addAttribute("games", gamesService.findAllDesc());
-		model.addAttribute("userInfo", (SecurityMember)auth.getPrincipal());
 		return "games/list";
 	}
 	

@@ -35,6 +35,7 @@ dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	implementation("org.springframework.boot:spring-boot-starter-security")
+	implementation("org.springframework.security:spring-security-taglibs")
 	implementation('mysql:mysql-connector-java:5.1.45')
 	implementation('org.apache.tomcat.embed:tomcat-embed-jasper')
     implementation('javax.servlet:jstl')

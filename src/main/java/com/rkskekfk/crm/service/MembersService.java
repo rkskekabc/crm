@@ -17,7 +17,6 @@ public class MembersService {
 	@Transactional
 	public Long save(MembersSaveRequestDto dto) {
 		Long id = membersRepository.save(dto.toEntity()).getId();
-		System.out.println("service");
 		return id;
 	}
 }
