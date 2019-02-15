@@ -15,12 +15,11 @@ var gameDetail = {
             sell_price: $("#sell_price").val()
         };
 
-		//var buyConfirm = confirm("구매하시겠습니까?");
-		//if(buyConfirm){
+		var buyConfirm = confirm("구매하시겠습니까?");
+		if(buyConfirm){
 	        $.ajax({
 	        	beforeSend: function(request) {
-		            request.setRequestHeader('${_csrf.headerName}', '${_csrf.token}');
-		            request.setRequestHeader('abc', 'de');
+		            request.setRequestHeader($('#_csrf').attr('name'), $('#_csrf').attr('value'));
 		        },
 	            type: 'POST',
 	            url: '/revenues',
@@ -33,7 +32,7 @@ var gameDetail = {
 	        }).fail(function (error) {
 	            console.log(error);
 	        });
-		//}
+		}
 	}
 }
 

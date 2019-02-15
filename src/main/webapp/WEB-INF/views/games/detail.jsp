@@ -8,6 +8,7 @@
 	</head>
 	<body>
 		<jsp:include page="../partials/nav.jsp" flush="true"></jsp:include>
+		<input type="hidden" id="_csrf" name="${_csrf.headerName}" value="${_csrf.token}" />
 		<input type="hidden" id="game_id" value="${game.id}" />
 		<input type="hidden" id="sell_price" value="${game.price}" />
 		<div class="jumbotron">
