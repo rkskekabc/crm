@@ -15,6 +15,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 import com.rkskekfk.crm.domain.BaseTimeEntity;
+import com.rkskekfk.crm.domain.gamepossession.GamePossession;
 import com.rkskekfk.crm.domain.memberroles.MemberRoles;
 
 import lombok.AccessLevel;
@@ -48,6 +49,10 @@ public class Members extends BaseTimeEntity {
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	@JoinColumn(name = "member_id")
 	private List<MemberRoles> member_roles = new ArrayList<MemberRoles>();
+
+	@OneToMany
+	@JoinColumn(name = "member_id")
+	private List<GamePossession> possessed_game = new ArrayList<GamePossession>();
 	
 	@Builder
 	public Members(String user_id, String password, String name, LocalDate birthday, String email, String phone, List<MemberRoles> member_roles) {

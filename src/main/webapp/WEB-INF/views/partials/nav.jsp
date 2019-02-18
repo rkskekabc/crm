@@ -26,6 +26,7 @@
     </sec:authorize>
     <sec:authorize access="isAuthenticated()">
 	    <sec:authentication property="principal.name"/> 님 안녕하세요
+    	<input type="hidden" id="member_id" name="member_id" value='<sec:authentication property="principal.id"/>' />
     </sec:authorize>
   </div>
   <br/>

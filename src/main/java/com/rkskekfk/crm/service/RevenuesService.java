@@ -17,6 +17,7 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class RevenuesService {
+	private GamePossessionService gamePossessionService;
 	private RevenuesRepository revenuesRepository;
 	
 	@Transactional(readOnly = true)
@@ -28,6 +29,7 @@ public class RevenuesService {
 	
 	@Transactional
 	public Long save(RevenueSaveRequestDto dto) {
+		gamePossessionService.save(dto);
 		return revenuesRepository.save(dto.toEntity()).getId();
 	}
 }

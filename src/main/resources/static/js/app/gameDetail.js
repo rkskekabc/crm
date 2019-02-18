@@ -10,6 +10,7 @@ var gameDetail = {
 
 	buy : function(){
 		var data = {
+            member_id: $("#member_id").val(),
             game_id: $("#game_id").val(),
             sell_date: new Date(),
             sell_price: $("#sell_price").val()
